@@ -1,8 +1,8 @@
-import 'package:auto_size_text/auto_size_text.dart';
-import 'package:fever_hackaton/styles/styles.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:layout/layout.dart';
+import 'package:transparent_image/transparent_image.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../constants.dart';
 
@@ -16,7 +16,8 @@ class Header extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final headerHeight = MediaQuery.of(context).size.height * 0.7;
+    final multi = kIsWeb ? 0.7 : 1;
+    final headerHeight = MediaQuery.of(context).size.height * multi;
 
     return SliverToBoxAdapter(
       child: Container(
@@ -24,7 +25,6 @@ class Header extends StatelessWidget {
         child: Stack(
           children: [
             _background(context),
-            _gradient(),
           ],
         ),
       ),
@@ -35,14 +35,18 @@ class Header extends StatelessWidget {
     final width = MediaQuery.of(context).size.width;
 
     return Container(
-      height: double.infinity,
-      width: double.infinity,
       child: (width < 1200)
           ? Column(
-              children: [_imageSelected(), _createDescription()],
+              children: [
+                _imageSelected(),
+                _createDescription(),
+              ],
             )
           : Row(
-              children: [_createDescription(), _imageSelected()],
+              children: [
+                _createDescription(),
+                _imageSelected(),
+              ],
             ),
     );
   }
@@ -57,15 +61,15 @@ class Header extends StatelessWidget {
           children: [
             Text(
               'VIEJOVEN',
-              style:
-              TextStyle(fontFamily: 'Anton', fontSize: 64, color: Colors.white),
+              style: TextStyle(
+                  fontFamily: 'Anton', fontSize: 64, color: Colors.white),
             ),
             Text(
               Constants.viejunoText,
               maxLines: 8,
               overflow: TextOverflow.ellipsis,
-              style:
-                  TextStyle(fontFamily: 'Custom', fontSize: 20, color: Colors.white),
+              style: TextStyle(
+                  fontFamily: 'Custom', fontSize: 20, color: Colors.white),
             ),
           ],
         ),
@@ -74,14 +78,19 @@ class Header extends StatelessWidget {
   }
 
   Widget _imageSelected() {
-    return Margin(
-      child: Container(
-        margin: EdgeInsets.only(top: 16),
-        child: ClipRRect(
-          borderRadius: BorderRadius.circular(8),
-          child: Image(
-            image: NetworkImage(Constants.plan1),
-            fit: BoxFit.cover,
+    return GestureDetector(
+      behavior: HitTestBehavior.translucent,
+      onTap: () => _launchInBrowser('https://feverup.com/m/93705'),
+      child: Margin(
+        child: Container(
+          margin: EdgeInsets.only(top: 16),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(8),
+            child: FadeInImage(
+              placeholder: MemoryImage(kTransparentImage),
+              image: NetworkImage(Constants.plan1),
+              fit: BoxFit.cover,
+            ),
           ),
         ),
       ),
@@ -97,5 +106,19 @@ class Header extends StatelessWidget {
               colors: [Colors.black.withOpacity(0.0), Colors.black],
               stops: [0.9, 1.0])),
     );
+  }
+
+  Future<void> _launchInBrowser(String url) async {
+    print(url);
+    if (await canLaunch(url)) {
+      await launch(
+        url,
+        forceSafariVC: false,
+        forceWebView: false,
+        headers: <String, String>{'my_header_key': 'my_header_value'},
+      );
+    } else {
+      throw 'Could not launch $url';
+    }
   }
 }

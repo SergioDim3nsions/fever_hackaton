@@ -1,5 +1,7 @@
 import 'package:fever_hackaton/navigation/navigation_servide.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:layout/layout.dart';
 
 import '../locator.dart';
 
@@ -28,18 +30,22 @@ class LandingPage extends StatelessWidget {
   }
 
   Widget _titleAndDescriptionContainer() {
-    return Container(
-      margin: EdgeInsets.only(left: 120),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          _createTitle(),
-          SizedBox(height: 46),
-          _createDescription(),
-          SizedBox(height: 46),
-          _createButton(),
-        ],
+    return Margin(
+      child: Align(
+        alignment: kIsWeb ? Alignment.centerLeft : Alignment.center,
+        child: Container(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              _createTitle(),
+              SizedBox(height: 46),
+              _createDescription(),
+              SizedBox(height: 46),
+              _createButton(),
+            ],
+          ),
+        ),
       ),
     );
   }

@@ -2,21 +2,21 @@ import 'package:fever_hackaton/plan_model.dart';
 
 class Constants {
   static final String concert1 =
-      "https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=100";
+      "https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=100";
   static final String concert2 =
-      "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=100";
+      "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=100";
   static final String cinema =
-      "https://images.unsplash.com/photo-1608170825938-a8ea0305d46c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=925&q=80";
+      "https://images.unsplash.com/photo-1608170825938-a8ea0305d46c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80";
   static final String theater =
-      "https://images.unsplash.com/photo-1580809361436-42a7ec204889?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1500&q=80";
+      "https://images.unsplash.com/photo-1580809361436-42a7ec204889?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&q=80";
   static final String healthy =
-      "https://images.unsplash.com/photo-1611888474857-3d559f0163be?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80";
+      "https://images.unsplash.com/photo-1611888474857-3d559f0163be?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80";
   static final String burger =
-      "https://images.unsplash.com/photo-1561758033-7e924f619b47?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=634&q=80";
+      "https://images.unsplash.com/photo-1561758033-7e924f619b47?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&q=80";
   static final String museum =
-      "https://images.unsplash.com/photo-1524014482380-0988169f598d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80";
+      "https://images.unsplash.com/photo-1524014482380-0988169f598d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80";
   static final String abstract =
-      "https://images.unsplash.com/photo-1527698952067-61fc35796fcd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1190&q=80";
+      "https://images.unsplash.com/photo-1527698952067-61fc35796fcd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&q=80";
 
 
 
@@ -40,11 +40,11 @@ No estás solo. Los de tu tipo sois raros, pero os conocéis, os juntáis para v
 
   static List<PlanModel> getPlans() {
     final List<PlanModel> list = [
-      PlanModel(id: "1", image: plan1, name: "Candlelight: Las cuatro estaciones de Vivaldi a la luz de las velas", url: "https://feverup.com/m/93705"),
       PlanModel(id: "1", image: plan2, name: "Candlelight: Mozart, Réquiem bajo la luz de las velas" , url: "https://feverup.com/m/77806"),
       PlanModel(id: "1", image: plan9, name: "Entradas para museo de las ilusiones", url: "https://feverup.com/m/87806"),
       PlanModel(id: "1", image: plan11, name: "La fabrica de chocolate", url: "https://feverup.com/m/92975"),
       PlanModel(id: "1", image: plan10, name: "Experience interactiva en Sweet Experience", url: "https://feverup.com/m/92796"),
+      PlanModel(id: "1", image: plan3, name: "Amor y Redes Sociales: pon a prueba a tu pareja", url: "https://feverup.com/m/80696"),
       PlanModel(id: "1", image: plan4, name: "Entradas para Cine Yelmo: ¡toda la cartelera!", url: "https://feverup.com/m/54872"),
       PlanModel(id: "1", image: plan6, name: "SteakBurger: menú", url: "https://feverup.com/m/69982"),
       PlanModel(id: "1", image: plan7, name: "Pizzart: menu con pizza", url: "https://feverup.com/m/83065"),
