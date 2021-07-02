@@ -12,7 +12,7 @@ class PlanList extends StatelessWidget {
   Widget build(BuildContext context) {
     return SliverMargin(
         sliver: SliverGrid.extent(
-      childAspectRatio: 0.75,
+      childAspectRatio: 1,
       maxCrossAxisExtent: 300,
       mainAxisSpacing: 20,
       crossAxisSpacing: 20,

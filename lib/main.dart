@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           navigatorKey: locator<NavigationService>().navigatorKey,
           title: 'Ruca Web!',
-          initialRoute: '/landing',
+          initialRoute: '/result',
           onGenerateRoute: RouteManager.router.generator,
         ),
       ),

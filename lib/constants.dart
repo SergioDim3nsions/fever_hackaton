@@ -32,7 +32,11 @@ class Constants {
   static final String plan10 = "https://fever.imgix.net/plan/photo/3ce279ca-146e-11eb-bf03-06551cb39bc6.jpg?w=550&h=550&auto=format&fm=jpg";
   static final String plan11 = "https://fever.imgix.net/plan/photo/c937e184-7b62-11eb-b783-06551cb39bc6.jpg?w=550&h=550&auto=format&fm=jpg";
 
-
+  static final String viejunoText = """
+Las etapas de la vida se han diluido. El mito de la eterna juventud está más vivo que nunca, pero siempre hay quien se siente viejo a los 30. Ese eres tú.
+Te gusta salir y los buenos planes, pero con comodidad. Transformas el camping el glamping, vas de festival, pero con pase VIP.
+No estás solo. Los de tu tipo sois raros, pero os conocéis, os juntáis para vuestros planazos y no os importa lo que opinen los demás. Eso es lucir la viejunidad con orgullo. Enhorabuena.
+  """;
 
   static List<PlanModel> getPlans() {
     final List<PlanModel> list = [
@@ -41,7 +45,6 @@ class Constants {
       PlanModel(id: "1", image: plan9, name: "Entradas para museo de las ilusiones", url: "https://feverup.com/m/87806"),
       PlanModel(id: "1", image: plan11, name: "La fabrica de chocolate", url: "https://feverup.com/m/92975"),
       PlanModel(id: "1", image: plan10, name: "Experience interactiva en Sweet Experience", url: "https://feverup.com/m/92796"),
-      PlanModel(id: "1", image: plan3, name: "Amor y Redes Sociales: pon a prueba a tu pareja", url: "https://feverup.com/m/80696"),
       PlanModel(id: "1", image: plan4, name: "Entradas para Cine Yelmo: ¡toda la cartelera!", url: "https://feverup.com/m/54872"),
       PlanModel(id: "1", image: plan6, name: "SteakBurger: menú", url: "https://feverup.com/m/69982"),
       PlanModel(id: "1", image: plan7, name: "Pizzart: menu con pizza", url: "https://feverup.com/m/83065"),

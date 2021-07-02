@@ -17,7 +17,6 @@ class ResultPage extends StatelessWidget {
           slivers: [
             Header(),
             PlanList(items: Constants.getPlans())
-            //MovieList(items: response.data!.results),
           ],
         ),
       ),
