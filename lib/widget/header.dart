@@ -16,7 +16,9 @@ class Header extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final multi = kIsWeb ? 0.7 : 1;
+    final width = MediaQuery.of(context).size.width;
+
+    final multi = (kIsWeb && width > 1200) ? 0.7 : 1;
     final headerHeight = MediaQuery.of(context).size.height * multi;
 
     return SliverToBoxAdapter(

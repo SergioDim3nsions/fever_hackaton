@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
         child: MaterialApp(
           debugShowCheckedModeBanner: false,
           navigatorKey: locator<NavigationService>().navigatorKey,
-          title: 'Ruca Web!',
+          title: 'Ruca & Bloste',
           initialRoute: '/landing',
           onGenerateRoute: RouteManager.router.generator,
         ),

@@ -12,7 +12,7 @@ class LandingPage extends StatelessWidget {
       body: Container(
         decoration: BoxDecoration(gradient: _createGradient()),
         child: Stack(
-          children: [_backgroundImage(), _titleAndDescriptionContainer()],
+          children: [_backgroundImage(), _titleAndDescriptionContainer(context)],
         ),
       ),
     );
@@ -29,10 +29,13 @@ class LandingPage extends StatelessWidget {
     );
   }
 
-  Widget _titleAndDescriptionContainer() {
+  Widget _titleAndDescriptionContainer(BuildContext context) {
+
+    final width = MediaQuery.of(context).size.width;
+
     return Margin(
       child: Align(
-        alignment: kIsWeb ? Alignment.centerLeft : Alignment.center,
+        alignment: (kIsWeb && width > 1200) ? Alignment.centerLeft : Alignment.center,
         child: Container(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
