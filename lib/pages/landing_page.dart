@@ -1,53 +1,96 @@
+import 'package:fever_hackaton/navigation/navigation_servide.dart';
 import 'package:flutter/material.dart';
+
+import '../locator.dart';
 
 class LandingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
-
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(
-          gradient: LinearGradient(colors: [
-            Colors.black,
-            Color(0xFF182835),
-          ], stops: [
-            0.5,
-            1.0
-          ], begin: Alignment.topCenter, end: Alignment.bottomCenter),
-        ),
-        child: Container(
-          child: Stack(
-            children: [
-              Align(
-                alignment: Alignment.topRight,
-                child: Image.asset(
-                  "plans.png",
-                ),
-              ),
-              Container(
-                color: Colors.black.withAlpha(100),
-                padding: EdgeInsets.all(128),
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    Text(
-                      "What turns\nyour fever\nup?",
-                      style: TextStyle(fontSize: 64, color: Colors.white, fontFamily: 'Anton'),
-                    ),
-                    SizedBox(height: 46),
-                    Text(
-                      "They say there’s a\nsomeone for everyone.\nWe think there’s a plan for everyone.\nFind your type.",
-                      style: TextStyle(fontSize: 24, color: Colors.white, fontFamily: 'Custom', fontWeight: FontWeight.normal),
-                    ),
-                  ],
-                ),
-              )
-            ],
-          ),
+        decoration: BoxDecoration(gradient: _createGradient()),
+        child: Stack(
+          children: [_backgroundImage(), _titleAndDescriptionContainer()],
         ),
       ),
     );
+  }
+
+  Widget _backgroundImage() {
+    return Container(
+      child: Align(
+        alignment: Alignment.topRight,
+        child: Image.asset(
+          "plans.png",
+        ),
+      ),
+    );
+  }
+
+  Widget _titleAndDescriptionContainer() {
+    return Container(
+      margin: EdgeInsets.only(left: 120),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          _createTitle(),
+          SizedBox(height: 46),
+          _createDescription(),
+          SizedBox(height: 46),
+          _createButton(),
+        ],
+      ),
+    );
+  }
+
+  Widget _createTitle() {
+    return const Text(
+      "What turns\nyour fever\nup?",
+      style: TextStyle(fontSize: 64, color: Colors.white, fontFamily: 'Anton'),
+    );
+  }
+
+  Widget _createDescription() {
+    return const Text(
+      "They say there’s a\nsomeone for everyone.\nWe think there’s a plan \nfor everyone.\nFind your type.",
+      style: TextStyle(
+          fontSize: 24,
+          color: Colors.white,
+          fontFamily: 'Custom',
+          fontWeight: FontWeight.normal),
+    );
+  }
+
+  Widget _createButton() {
+    return MaterialButton(
+      shape: RoundedRectangleBorder(
+          side: BorderSide(
+        color: Colors.white,
+        width: 6,
+      )),
+      onPressed: () {
+        locator<NavigationService>().navigateTo('/first');
+      },
+      child: Container(
+          alignment: Alignment.center,
+          width: 270,
+          padding: EdgeInsets.all(16),
+          child: Text(
+            'FIND OUT',
+            style: TextStyle(
+                fontSize: 36, color: Colors.white, fontFamily: 'Anton'),
+          )),
+    );
+  }
+
+  LinearGradient _createGradient() {
+    return const LinearGradient(colors: [
+      Colors.black,
+      Color(0xFF182835),
+    ], stops: [
+      0.2,
+      1.0
+    ], begin: Alignment.topCenter, end: Alignment.bottomCenter);
   }
 }
